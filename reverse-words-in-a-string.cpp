@@ -8,6 +8,8 @@ public:
 private:
   // Remove trailing/leading/multiple spaces
   void trim(string& s) {
-
+    for (int i = -1, j = 0; j < s.length(); ++j) {
+      
+    }
   }
 };
