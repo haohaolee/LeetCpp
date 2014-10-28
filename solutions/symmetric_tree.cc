@@ -13,8 +13,8 @@
  * };
  */
 class Solution {
-public:
-    bool isSymmetric(TreeNode *root) {
-
-    }
+//public:
+//    bool isSymmetric(TreeNode *root) {
+//
+//    }
 };

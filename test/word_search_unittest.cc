@@ -1,7 +1,9 @@
 #include <gtest\gtest.h>
 
+#include "..\solutions\word_search.h"
+
 namespace {
-  TEST(WordSearchTest, FUCK) {
-    EXPECT_EQ(1, 1);
+  TEST(WordSearchTest, Exist) {
+    WordSearch solution;
   }
 }

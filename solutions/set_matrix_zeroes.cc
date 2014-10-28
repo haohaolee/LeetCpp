@@ -1,3 +1,6 @@
+#include <vector>
+using namespace std;
+
 class Solution {
 public:
   void setZeroes(vector<vector<int> > &matrix) {
@@ -16,13 +19,13 @@ public:
         if (matrix[i][j] != 0)
           continue;
 
-          if (i == 0)
-            row_0_fill = true;
+        if (i == 0)
+          row_0_fill = true;
 
-          if (j == 0)
-            col_0_fill = true;
+        if (j == 0)
+          col_0_fill = true;
 
-          matrix[0][j] = matrix[i][0] = 0;
+        matrix[0][j] = matrix[i][0] = 0;
       }
     }
 

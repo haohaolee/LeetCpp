@@ -11,8 +11,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\solutions\maximum_product_subarray.cc" />
+    <ClCompile Include="..\solutions\reverse-words-in-a-string.cc" />
+    <ClCompile Include="..\solutions\set_matrix_zeroes.cc" />
+    <ClCompile Include="..\solutions\symmetric_tree.cc" />
+    <ClCompile Include="..\solutions\word_search.cc" />
     <ClCompile Include="..\test\*.cc" />
     <ClCompile Include="..\src\*.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\solutions\word_search.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F5C684F9-867A-466A-935F-665CEFACF553}</ProjectGuid>
