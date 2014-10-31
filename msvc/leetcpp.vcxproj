@@ -26,6 +26,9 @@
     <ClInclude Include="..\solutions\set_matrix_zeroes.h" />
     <ClInclude Include="..\solutions\word_search.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.gitignore" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F5C684F9-867A-466A-935F-665CEFACF553}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -60,14 +63,14 @@
     <IntDir>$(OutDir)$(ProjectName)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(ProjectDir)\..\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)\..\lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(ProjectDir)\..\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionName)\$(Configuration)\</OutDir>
     <IntDir>$(OutDir)$(ProjectName)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(ProjectDir)\..\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)\..\lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(ProjectDir)\..\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
