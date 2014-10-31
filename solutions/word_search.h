@@ -4,8 +4,8 @@
 *
 */
 
-#ifndef LEETCPP_SOLUTION_WORD_SEARCH_H_
-#define LEETCPP_SOLUTION_WORD_SEARCH_H_
+#ifndef LEETCPP_SOLUTIONS_WORD_SEARCH_H_
+#define LEETCPP_SOLUTIONS_WORD_SEARCH_H_
 
 #include <vector>
 #include <algorithm>
@@ -32,4 +32,4 @@ public:
   bool exist(word_board &board, std::string word);
 };
 
-#endif  // LEETCPP_SOLUTION_WORD_SEARCH_H_
+#endif  // LEETCPP_SOLUTIONS_WORD_SEARCH_H_

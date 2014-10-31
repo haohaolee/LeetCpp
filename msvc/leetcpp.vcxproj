@@ -12,14 +12,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\solutions\maximum_product_subarray.cc" />
-    <ClCompile Include="..\solutions\reverse-words-in-a-string.cc" />
+    <ClCompile Include="..\solutions\maximum_product_subarray_unittest.cc" />
+    <ClCompile Include="..\solutions\reverse_words_in_a_string.cc" />
     <ClCompile Include="..\solutions\set_matrix_zeroes.cc" />
+    <ClCompile Include="..\solutions\set_matrix_zeroes_unittest.cc" />
     <ClCompile Include="..\solutions\symmetric_tree.cc" />
     <ClCompile Include="..\solutions\word_search.cc" />
     <ClCompile Include="..\test\*.cc" />
     <ClCompile Include="..\src\*.cc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\solutions\maximum_product_subarray.h" />
+    <ClInclude Include="..\solutions\set_matrix_zeroes.h" />
     <ClInclude Include="..\solutions\word_search.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
