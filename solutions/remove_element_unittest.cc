@@ -5,6 +5,10 @@
 namespace {
   TEST(RemoveElementTest, RemoveElement) {
     RemoveElement solution;
-    EXPECT_EQ(0, 0);
+    int A[] = { 3, 1, 2, 3, -1, 0 };
+    int n = sizeof(A) / sizeof(int);
+    int elem = 3;
+
+    EXPECT_EQ(4, solution.removeElement(A, n, elem));
   }
 }
