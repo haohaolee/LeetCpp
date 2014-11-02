@@ -1,7 +1,7 @@
 #include <vector>
 using namespace std;
 
-#include "..\solutions\set_matrix_zeroes.h"
+#include "set_matrix_zeroes.h"
 
 void SetMatrixZeroes::setZeroes(vector<vector<int> > &matrix) {
   if (matrix.size() == 0)

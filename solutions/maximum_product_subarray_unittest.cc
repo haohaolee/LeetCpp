@@ -2,9 +2,9 @@
 #include <string>
 using namespace std;
 
-#include <gtest\gtest.h>
+#include <gtest/gtest.h>
 
-#include "..\solutions\maximum_product_subarray.h"
+#include "../solutions/maximum_product_subarray.h"
 
 namespace {
   TEST(MaximumProductSubArrayTest, MaxProduct) {

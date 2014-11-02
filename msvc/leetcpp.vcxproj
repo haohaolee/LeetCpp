@@ -13,6 +13,8 @@
   <ItemGroup>
     <ClCompile Include="..\solutions\maximum_product_subarray.cc" />
     <ClCompile Include="..\solutions\maximum_product_subarray_unittest.cc" />
+    <ClCompile Include="..\solutions\remove_element.cc" />
+    <ClCompile Include="..\solutions\remove_element_unittest.cc" />
     <ClCompile Include="..\solutions\reverse_words_in_a_string.cc" />
     <ClCompile Include="..\solutions\set_matrix_zeroes.cc" />
     <ClCompile Include="..\solutions\set_matrix_zeroes_unittest.cc" />
@@ -23,6 +25,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\solutions\maximum_product_subarray.h" />
+    <ClInclude Include="..\solutions\remove_element.h" />
     <ClInclude Include="..\solutions\set_matrix_zeroes.h" />
     <ClInclude Include="..\solutions\word_search.h" />
   </ItemGroup>

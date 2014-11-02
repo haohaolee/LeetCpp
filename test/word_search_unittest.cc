@@ -2,9 +2,9 @@
 #include <string>
 using namespace std;
 
-#include <gtest\gtest.h>
+#include <gtest/gtest.h>
 
-#include "..\solutions\word_search.h"
+#include "../solutions/word_search.h"
 
 namespace {
   TEST(WordSearchTest, Exist) {

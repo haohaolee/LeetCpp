@@ -8,7 +8,7 @@
 #include <exception>
 using namespace std;
 
-#include "../solutions/maximum_product_subarray.h"
+#include "maximum_product_subarray.h"
 
 int MaximumProductSubArray::maxProduct(int A[], int n) {
   if (A == NULL || n <= 0) {
