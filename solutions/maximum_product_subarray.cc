@@ -1,9 +1,3 @@
-/*
- * Maximum Product Subarray.
- * https://oj.leetcode.com/problems/maximum-product-subarray/
- * Dynamic Programming.
- */
-
 #include <algorithm>
 #include <exception>
 using namespace std;
