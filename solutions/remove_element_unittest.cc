@@ -20,4 +20,13 @@ namespace {
 
     EXPECT_EQ(0, solution.removeElement(array, n, elem));
   };
+
+  TEST(RemoveElementTest, Case3) {
+    RemoveElement solution;
+    int A[] = { 1, 1, 1 };
+    int n = sizeof(A) / sizeof(int);
+    int elem = 3;
+
+    EXPECT_EQ(3, solution.removeElement(A, n, elem));
+  };
 }
