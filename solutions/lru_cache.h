@@ -16,7 +16,14 @@
 #ifndef LEETCPP_SOLUTIONS_LRU_CACHE_H_
 #define LEETCPP_SOLUTIONS_LRU_CACHE_H_
 
+#include <list>
+
 class LRUCache {
+private:
+  int capacity_;
+  typedef std::list<std::pair<int, int>> Cache;
+  Cache cache_;
+
 public:
   LRUCache(int capacity);
   int get(int key);
