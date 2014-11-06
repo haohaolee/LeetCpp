@@ -17,12 +17,15 @@
 #define LEETCPP_SOLUTIONS_LRU_CACHE_H_
 
 #include <list>
+#include <unordered_map>
 
 class LRUCache {
 private:
   int capacity_;
-  typedef std::list<std::pair<int, int>> Cache;
-  Cache cache_;
+  int size_;
+  std::list<int> cache_;
+  typedef std::list<int>::iterator CacheIterator;
+  std::unordered_map<int, CacheIterator> mapping_;
 
 public:
   LRUCache(int capacity);

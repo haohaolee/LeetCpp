@@ -5,21 +5,23 @@ using namespace std;
 
 #include "lru_cache.h"
 
-LRUCache::LRUCache(int capacity) : capacity_(capacity) {
+LRUCache::LRUCache(int capacity) : capacity_(capacity), size_(0) {
 
 }
 
 int LRUCache::get(int key) {
-  int value = -1;
+  // Not found.
+  if (mapping_.find(key) == mapping_.end())
+    return -1;
 
-  for (Cache::iterator it = cache_.begin(); it != cache_.end(); ++it) {
-    if (it->first == key) {
-      value = it->second;
-      break;
-    }
-  }
+  // Found, needs to raise its position to front.
+  CacheIterator it = mapping_[key];
+  int value = *it;
+  cache_.erase(it);
+  cache_.push_front(value);
+  mapping_[key] = cache_.begin();
 
-  return value <= 0 ? -1 : value;
+  return value;
 }
 
 void LRUCache::set(int key, int value) {
@@ -27,9 +29,18 @@ void LRUCache::set(int key, int value) {
 
   // Doesn't exist, need to insert a new one.
   if (oldValue < 0) {
+    // If over capacity, let's pop back.
+    if (size_ >= capacity_) {
+      cache_.pop_back();
+      --size_;
+    }
 
+    cache_.push_front(value);
+    mapping_[key] = cache_.begin();
+    ++size_;
   }
   else {
-
+    CacheIterator it = mapping_[key];
+    *it = value;
   }
 }
