@@ -16,6 +16,7 @@
 #ifndef LEETCPP_SOLUTIONS_LRU_CACHE_H_
 #define LEETCPP_SOLUTIONS_LRU_CACHE_H_
 
+#include <utility>
 #include <list>
 #include <unordered_map>
 
@@ -23,8 +24,9 @@ class LRUCache {
 private:
   int capacity_;
   int size_;
-  std::list<int> cache_;
-  typedef std::list<int>::iterator CacheIterator;
+  typedef std::list<std::pair<int, int>> Cache;
+  Cache cache_;
+  typedef Cache::iterator CacheIterator;
   std::unordered_map<int, CacheIterator> mapping_;
 
 public:

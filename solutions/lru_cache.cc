@@ -16,9 +16,9 @@ int LRUCache::get(int key) {
 
   // Found, needs to raise its position to front.
   CacheIterator it = mapping_[key];
-  int value = *it;
+  int value = it->second;
   cache_.erase(it);
-  cache_.push_front(value);
+  cache_.push_front(pair<int, int>(key, value));
   mapping_[key] = cache_.begin();
 
   return value;
@@ -31,16 +31,18 @@ void LRUCache::set(int key, int value) {
   if (oldValue < 0) {
     // If over capacity, let's pop back.
     if (size_ >= capacity_) {
+      int key = cache_.back().first;
       cache_.pop_back();
+      mapping_.erase(key);
       --size_;
     }
 
-    cache_.push_front(value);
+    cache_.push_front(pair<int, int>(key, value));
     mapping_[key] = cache_.begin();
     ++size_;
   }
   else {
     CacheIterator it = mapping_[key];
-    *it = value;
+    it->second = value;
   }
 }

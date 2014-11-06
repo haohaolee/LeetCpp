@@ -13,5 +13,9 @@ namespace {
 
     solution.set(2, 200);
     EXPECT_EQ(200, solution.get(2));
+
+    solution.set(3, 300);
+    EXPECT_EQ(-1, solution.get(1));
+    EXPECT_EQ(300, solution.get(3));
   }
 }
