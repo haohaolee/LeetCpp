@@ -1,24 +1,23 @@
-#include <stack>
 #include <algorithm>
 using namespace std;
 
-#include "min_stack.h"
+#include "min_stack_single.h"
 
-void MinStack::push(int x) {
+void MinStackSingle::push(int x) {
   // First elem.
-  if (stack_.empty()) {
+  if (data_.empty()) {
     current_min_elem_ = x;
-    stack_.push(0L);
+    data_.push_back(0L);
   } else {
-    stack_.push(x - current_min_elem_);
+    data_.push_back(x - current_min_elem_);
     current_min_elem_ = min(static_cast<long long>(x), current_min_elem_);
   }
 }
 
-void MinStack::pop() {
+void MinStackSingle::pop() {
   Validate();
 
-  long long delta = stack_.top();
+  long long delta = data_.back();
 
   // delta < 0 means origin < "current_min_elem_"(prev_min_elem), so top element
   // is the occurence of current minimum element:
@@ -27,14 +26,14 @@ void MinStack::pop() {
     current_min_elem_ = current_min_elem_ - delta;
   }
 
-  stack_.pop();
+  data_.pop_back();
 }
 
-int MinStack::top() {
+int MinStackSingle::top() {
   Validate();
 
   int top_elem;
-  long long delta = stack_.top();
+  long long delta = data_.back();
 
   // delta < 0 means origin < "current_min_elem_"(prev_min_elem), so top element
   // is the occurence of current minimum element: origin = current_min_elem_.
@@ -47,14 +46,14 @@ int MinStack::top() {
   return top_elem;
 }
 
-int MinStack::getMin() {
+int MinStackSingle::getMin() {
   Validate();
 
   return static_cast<int>(current_min_elem_);
 }
 
-void MinStack::Validate() {
-  if (stack_.empty())
-    throw "MinStack is empty!";
+void MinStackSingle::Validate() {
+  if (data_.empty())
+    throw "MinStackSingle is empty!";
 
 }

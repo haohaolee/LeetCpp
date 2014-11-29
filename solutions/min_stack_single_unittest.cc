@@ -2,11 +2,11 @@
 
 #include <gtest/gtest.h>
 
-#include "min_stack.h"
+#include "min_stack_single.h"
 
 namespace {
-  TEST(MinStackTest, Case1) {
-    MinStack solution;
+  TEST(MinStackSingleTest, Case1) {
+    MinStackSingle solution;
 
     solution.push(2);
     solution.push(1);
@@ -19,7 +19,7 @@ namespace {
   };
 
   TEST(MinStackTest, Case2) {
-    MinStack solution;
+    MinStackSingle solution;
 
     solution.push(INT_MAX - 1);
     solution.push(INT_MAX - 1);

@@ -3,12 +3,12 @@
 * https://oj.leetcode.com/problems/min-stack/
 */
 
-#ifndef LEETCPP_SOLUTIONS_MIN_STACK_H_
-#define LEETCPP_SOLUTIONS_MIN_STACK_H_
+#ifndef LEETCPP_SOLUTIONS_MIN_STACK_SINGLE_H_
+#define LEETCPP_SOLUTIONS_MIN_STACK_SINGLE_H_
 
-#include <stack>
+#include <deque>
 
-class MinStack {
+class MinStackSingle {
 public:
   void push(int x);
 
@@ -17,12 +17,13 @@ public:
   int top();
 
   int getMin();
+
 private:
   void Validate();
 
   // data
-  std::stack<long long> stack_;
+  std::deque<long long> data_;
   long long current_min_elem_;
 };
 
-#endif  // LEETCPP_SOLUTIONS_MIN_STACK_H_
+#endif  // LEETCPP_SOLUTIONS_MIN_STACK_SINGLE_H_
