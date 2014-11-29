@@ -1,6 +1,8 @@
 /*
 * Min Stack.
 * https://oj.leetcode.com/problems/min-stack/
+* Single deque is the tricky implementation, but "NOT AC" yet by stupid LeetCode
+* due to MLE(long long).
 */
 
 #ifndef LEETCPP_SOLUTIONS_MIN_STACK_SINGLE_H_

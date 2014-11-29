@@ -1,6 +1,7 @@
 /*
 * Min Stack.
 * https://oj.leetcode.com/problems/min-stack/
+* Double queue is the simplest implementation.
 */
 
 #ifndef LEETCPP_SOLUTIONS_MIN_STACK_DOUBLE_H_
