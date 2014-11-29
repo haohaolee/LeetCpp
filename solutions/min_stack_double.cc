@@ -1,27 +1,31 @@
 #include <algorithm>
+#include <utility>
 using namespace std;
 
 #include "min_stack_double.h"
 
 void MinStackDouble::push(int x) {
-  int min_elem;
-
-  // First elem.
-  if (data_.empty()) {
-    min_elem = x;
-  } else {
-    min_elem = min(x, top());
-  }
-
   data_.push_back(x);
-  mins_.push_back(min_elem);
+
+  // Only push new min_elem.
+  if (mins_.empty() || x < getMin()) {
+    mins_.push_back(pair<int, int>(x, 1));
+  } else {
+    ++mins_.back().second;
+  }
 }
 
 void MinStackDouble::pop() {
   validate();
 
+  int top_elem = top();
+  int min_elem = getMin();
+
   data_.pop_back();
-  mins_.pop_back();
+  --mins_.back().second;
+  if (mins_.back().second <= 0) {
+    mins_.pop_back();
+  }
 }
 
 int MinStackDouble::top() {
@@ -33,13 +37,10 @@ int MinStackDouble::top() {
 int MinStackDouble::getMin() {
   validate();
 
-  return mins_.back();
+  return mins_.back().first;
 }
 
 void MinStackDouble::validate() {
-  if (data_.empty())
+  if (data_.empty() || mins_.empty())
     throw "Stack is empty!";
-
-  if (data_.size() != mins_.size())
-    throw "data_ is not consistent with mins!";
 }

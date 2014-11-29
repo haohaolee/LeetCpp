@@ -8,6 +8,7 @@
 #define LEETCPP_SOLUTIONS_MIN_STACK_DOUBLE_H_
 
 #include <deque>
+#include <utility>
 
 class MinStackDouble {
 public:
@@ -24,7 +25,7 @@ private:
 
   // data
   std::deque<int> data_;
-  std::deque<int> mins_;
+  std::deque<std::pair<int, int>> mins_;
 };
 
 #endif  // LEETCPP_SOLUTIONS_MIN_STACK_DOUBLE_H_
