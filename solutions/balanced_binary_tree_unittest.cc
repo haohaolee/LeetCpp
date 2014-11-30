@@ -19,11 +19,12 @@ namespace {
     EXPECT_TRUE(solution.isBalanced(&root));
   };
 
-  //TEST(BalancedBinaryTreeTest, Case2) {
-  //  BalancedBinaryTree solution;
+  TEST(BalancedBinaryTreeTest, Case2) {
+    BalancedBinaryTree solution;
 
-  //  string tree_data = "1223##34##4";
-  //  TreeNode* root = deserialize_tree(tree_data);
-  //  EXPECT_TRUE(!solution.isBalanced(root));
-  //};
+    string tree_data = "1223##34##4";
+    TreeNode* root = build_tree(tree_data);
+    EXPECT_TRUE(!solution.isBalanced(root));
+    destroy_tree(root);
+  };
 }
