@@ -9,21 +9,25 @@ using namespace std;
 namespace {
   TEST(BalancedBinaryTreeTest, Case1) {
     BalancedBinaryTree solution;
+    TreeNode* root = NULL;
 
-    // Empty tree
+    // Empty tree.
     EXPECT_TRUE(solution.isBalanced(NULL));
+    root = build_tree("#");
+    EXPECT_TRUE(solution.isBalanced(root));
+    destroy_tree(root);
 
-    // Generate BST
-    TreeNode root(1);
-
-    EXPECT_TRUE(solution.isBalanced(&root));
+    // Single root node tree.
+    root = build_tree("1");
+    EXPECT_TRUE(solution.isBalanced(root));
+    destroy_tree(root);
   };
 
   TEST(BalancedBinaryTreeTest, Case2) {
     BalancedBinaryTree solution;
+    TreeNode* root = NULL;
 
-    string tree_data = "1223##34##4";
-    TreeNode* root = build_tree(tree_data);
+    root = build_tree("1223##34##4");
     EXPECT_TRUE(!solution.isBalanced(root));
     destroy_tree(root);
   };
