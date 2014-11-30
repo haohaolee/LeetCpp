@@ -7,25 +7,20 @@ using namespace std;
 void MinStackDouble::push(int x) {
   data_.push_back(x);
 
-  // Only push new min_elem.
-  if (mins_.empty() || x < getMin()) {
-    mins_.push_back(pair<int, int>(x, 1));
-  } else {
-    ++mins_.back().second;
+  // Only push new min_elem or the elem that is <= current minimum elem.
+  if (mins_.empty() || x <= getMin()) {
+    mins_.push_back(x);
   }
 }
 
 void MinStackDouble::pop() {
   validate();
 
-  int top_elem = top();
-  int min_elem = getMin();
-
-  data_.pop_back();
-  --mins_.back().second;
-  if (mins_.back().second <= 0) {
+  if (top() <= getMin()) {
     mins_.pop_back();
   }
+
+  data_.pop_back();
 }
 
 int MinStackDouble::top() {
@@ -37,7 +32,7 @@ int MinStackDouble::top() {
 int MinStackDouble::getMin() {
   validate();
 
-  return mins_.back().first;
+  return mins_.back();
 }
 
 void MinStackDouble::validate() {
