@@ -33,4 +33,13 @@ namespace {
     EXPECT_TRUE(!solution.isSymmetric(root));
     destroy_tree(root);
   };
+
+  TEST(SymmetricTreeTest, Case4) {
+    SymmetricTree solution;
+    string output_tree = "1,2,3,3,#,2,#";
+
+    TreeNode* root = build_tree(output_tree);
+    EXPECT_TRUE(!solution.isSymmetric(root));
+    destroy_tree(root);
+  };
 }
