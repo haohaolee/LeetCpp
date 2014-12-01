@@ -27,7 +27,7 @@ namespace {
     BalancedBinaryTree solution;
     TreeNode* root = NULL;
 
-    root = build_tree("1223##34##4");
+    root = build_tree("1,2,2,3,#,#,3,4,#,#,4");
     EXPECT_TRUE(!solution.isBalanced(root));
     destroy_tree(root);
   };

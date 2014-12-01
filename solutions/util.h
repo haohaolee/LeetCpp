@@ -25,8 +25,12 @@ typedef enum TreeNodeType_ {
 
 typedef std::pair<TreeNode*, TreeNodeType> CandidateTreeNodeType;
 
+// Tree operations.
 void destroy_tree(TreeNode* root);
 string output_tree(TreeNode* root);
 TreeNode* build_tree(const std::string& tree_data);
+
+// String operations.
+string trim(string& data, const string& pattern);
 
 #endif  // LEETCPP_SOLUTIONS_UTIL_H_
