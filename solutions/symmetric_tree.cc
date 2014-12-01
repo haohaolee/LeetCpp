@@ -1,20 +1,6 @@
-/*
- * Symmetric Tree .
- * https://oj.leetcode.com/problems/symmetric-tree/
-*/
+#include "symmetric_tree.h"
+#include "util.h"
 
-/**
- * Definition for binary tree
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
-class Solution {
-//public:
-//    bool isSymmetric(TreeNode *root) {
-//
-//    }
-};
+bool SymmetricTree::isSymmetric(TreeNode *root) {
+  return false;
+}
