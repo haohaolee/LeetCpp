@@ -8,7 +8,7 @@ using namespace std;
 
 namespace {
   TEST(SymmetricTreeTest, Case1) {
-    SymmetricTree solution;
+    SymmetricTreeRecursive solution;
     string output_tree = "1,2,3,#,#,4,#,#,5";
 
     TreeNode* root = build_tree(output_tree);
@@ -17,7 +17,7 @@ namespace {
   };
 
   TEST(SymmetricTreeTest, Case2) {
-    SymmetricTree solution;
+    SymmetricTreeRecursive solution;
     string output_tree = "1,2,2,3,4,4,3";
 
     TreeNode* root = build_tree(output_tree);
@@ -26,7 +26,7 @@ namespace {
   };
 
   TEST(SymmetricTreeTest, Case3) {
-    SymmetricTree solution;
+    SymmetricTreeRecursive solution;
     string output_tree = "1,2,2,#,3,#,3";
 
     TreeNode* root = build_tree(output_tree);
@@ -35,7 +35,7 @@ namespace {
   };
 
   TEST(SymmetricTreeTest, Case4) {
-    SymmetricTree solution;
+    SymmetricTreeRecursive solution;
     string output_tree = "1,2,3,3,#,2,#";
 
     TreeNode* root = build_tree(output_tree);

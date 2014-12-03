@@ -7,17 +7,13 @@
 #ifndef LEETCPP_SOLUTIONS_SYMMETRIC_TREE_H_
 #define LEETCPP_SOLUTIONS_SYMMETRIC_TREE_H_
 
-#include <string>
-#include <vector>
-
 #include "util.h"
 
-class SymmetricTree {
+class SymmetricTreeRecursive {
 public:
   bool isSymmetric(TreeNode *root);
 private:
-  void inOrderVisit(TreeNode* root, std::vector<std::string>& visit_sequence);
-  bool isPalindrome(const std::vector<std::string>& sequence);
+  bool isSymmetric(TreeNode* left_child, TreeNode* right_child);
 };
 
 #endif  // LEETCPP_SOLUTIONS_SYMMETRIC_TREE_H_

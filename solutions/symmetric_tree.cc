@@ -1,40 +1,23 @@
-#include <string>
-#include <vector>
-using namespace std;
-
 #include "symmetric_tree.h"
 #include "util.h"
 
-bool SymmetricTree::isSymmetric(TreeNode *root) {
+bool SymmetricTreeRecursive::isSymmetric(TreeNode *root) {
+  // Empty tree.
   if (root == NULL)
     return true;
 
-  vector<string> visit_sequence;
-  inOrderVisit(root, visit_sequence);
-
-  return isPalindrome(visit_sequence);
+  // Left & Right sub-trees should be symmetric.
+  return isSymmetric(root->left, root->right);
 }
 
-void SymmetricTree::inOrderVisit(TreeNode* root, vector<string>& visit_sequence) {
-  if (root == NULL) {
-    visit_sequence.push_back("#");
-    return;
+bool SymmetricTreeRecursive::isSymmetric(TreeNode* left_child,
+                                         TreeNode* right_child) {
+  if (left_child) {
+    return (right_child &&
+            left_child->val == right_child->val &&
+            isSymmetric(left_child->left, right_child->right) &&
+            isSymmetric(left_child->right, right_child->left));
   }
 
-  inOrderVisit(root->left, visit_sequence);
-  visit_sequence.push_back(to_string(root->val));
-  inOrderVisit(root->right, visit_sequence);
-}
-
-bool SymmetricTree::isPalindrome(const vector<string>& sequence) {
-  bool ret = true;
-  size_t n = sequence.size();
-  for (size_t i = 0; i < n / 2; ++i) {
-    if (sequence[i] != sequence[n - 1 - i]) {
-      ret = false;
-      break;
-    }
-  }
-
-  return ret;
+  return !right_child;
 }
