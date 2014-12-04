@@ -1,7 +1,7 @@
 /**
 * Symmetric Tree .
 * https://oj.leetcode.com/problems/symmetric-tree/
-* In-order traversal sequence is palindrome.
+* Recursive and Iterative ways.
 */
 
 #ifndef LEETCPP_SOLUTIONS_SYMMETRIC_TREE_H_
