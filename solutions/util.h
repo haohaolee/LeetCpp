@@ -9,6 +9,17 @@
 #include <string>
 #include <utility>
 
+
+// Definition for singly-linked list.
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+void destroy_linked_list(ListNode* head);
+std::string output_linked_list(ListNode* head);
+ListNode* build_linked_list(const std::string& list_data);
+
 // Definition for binary tree.
 struct TreeNode {
   int val;

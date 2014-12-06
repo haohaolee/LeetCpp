@@ -7,6 +7,60 @@ using namespace std;
 
 #include "util.h"
 
+void destroy_linked_list(ListNode* head) {
+  ListNode* cur = head;
+
+  while (cur) {
+    ListNode* next = cur->next;
+    delete cur;
+    cur = next;
+  }
+}
+
+string output_linked_list(ListNode* head) {
+  string output;
+  ListNode* cur = head;
+
+  while (cur) {
+    if (!output.empty()) {
+      output.append(",");
+    }
+
+    output.append(to_string(cur->val));
+
+    cur = cur->next;
+  }
+
+  return output;
+}
+
+ListNode* build_linked_list(const string& list_data) {
+  ListNode* head = NULL, *cur = NULL, *next = NULL;
+
+  // Use stream to split string with delimiter = ",".
+  istringstream stream(list_data);
+  string token = "";
+  char delimiter = ',';
+
+  // Build the linked list.
+  while (getline(stream, token, ',')) {
+    next = new ListNode(stoi(token));
+
+    if (cur) {
+      cur->next = next;
+    }
+
+    cur = next;
+
+    if (head == NULL) {
+      head = cur;
+    }
+  }
+
+  return head;
+}
+
+
 void destroy_tree(TreeNode* root) {
   if (root == NULL)
     return;
