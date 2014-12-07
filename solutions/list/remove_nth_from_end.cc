@@ -1,7 +1,7 @@
 #include <cstdlib>
 
 #include "remove_nth_from_end.h"
-#include "util.h"
+#include "../util/util.h"
 
 ListNode* RemoveNthFromEnd::remove(ListNode *head, int n) {
   if (n <= 0 || head == NULL)

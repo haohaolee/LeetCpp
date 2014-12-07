@@ -12,12 +12,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\solutions\**\*.cc" />
-    <ClCompile Include="..\solutions\**\*.h" />
     <ClCompile Include="..\test\**\*.cc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitignore" />
     <None Include="..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\solutions\**\*.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F5C684F9-867A-466A-935F-665CEFACF553}</ProjectGuid>

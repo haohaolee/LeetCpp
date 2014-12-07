@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "../solutions/remove_duplicates_from_sorted_array.h"
+#include "remove_duplicates_from_sorted_array.h"
 
 namespace {
   TEST(RemoveDuplicatesFromSortedArrayTest, Case1) {

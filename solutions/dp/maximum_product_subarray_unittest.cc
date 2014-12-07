@@ -4,7 +4,7 @@ using namespace std;
 
 #include <gtest/gtest.h>
 
-#include "../solutions/maximum_product_subarray.h"
+#include "maximum_product_subarray.h"
 
 namespace {
   TEST(MaximumProductSubArrayTest, MaxProduct) {

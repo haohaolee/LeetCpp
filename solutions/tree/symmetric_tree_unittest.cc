@@ -4,7 +4,7 @@ using namespace std;
 #include <gtest/gtest.h>
 
 #include "symmetric_tree.h"
-#include "util.h"
+#include "../util/util.h"
 
 namespace {
   TEST(SymmetricTreeRecursiveTest, Case1) {

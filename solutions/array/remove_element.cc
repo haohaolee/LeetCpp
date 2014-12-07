@@ -3,7 +3,7 @@
 
 using namespace std;
 
-#include "../solutions/remove_element.h"
+#include "remove_element.h"
 
 int RemoveElement::removeElement(int A[], int n, int elem) {
   if (n < 0)

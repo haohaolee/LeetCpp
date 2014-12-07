@@ -5,7 +5,7 @@
 using namespace std;
 
 #include "symmetric_tree.h"
-#include "util.h"
+#include "../util/util.h"
 
 bool SymmetricTreeRecursive::isSymmetric(TreeNode *root) {
   // Empty tree.

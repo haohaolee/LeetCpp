@@ -8,7 +8,7 @@
 #ifndef LEETCPP_SOLUTIONS_BALANCED_BINARY_TREE_H_
 #define LEETCPP_SOLUTIONS_BALANCED_BINARY_TREE_H_
 
-#include "util.h"
+#include "../util/util.h"
 
 class BalancedBinaryTree {
 public:

@@ -4,7 +4,7 @@ using namespace std;
 #include <gtest/gtest.h>
 
 #include "balanced_binary_tree.h"
-#include "util.h"
+#include "../util/util.h"
 
 namespace {
   TEST(BalancedBinaryTreeTest, Case1) {

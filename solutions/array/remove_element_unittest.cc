@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "../solutions/remove_element.h"
+#include "remove_element.h"
 
 namespace {
   TEST(RemoveElementTest, Case1) {

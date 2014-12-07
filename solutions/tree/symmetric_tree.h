@@ -11,7 +11,7 @@
 #include <utility>
 #include <vector>
 
-#include "util.h"
+#include "../util/util.h"
 
 class SymmetricTreeRecursive {
 public:

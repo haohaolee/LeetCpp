@@ -3,7 +3,7 @@
 using namespace std;
 
 #include "balanced_binary_tree.h"
-#include "util.h"
+#include "../util/util.h"
 
 bool BalancedBinaryTree::isBalanced(TreeNode* root) {
   // Suppose empty tree is a special balanced BST.

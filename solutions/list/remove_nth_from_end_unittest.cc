@@ -4,7 +4,7 @@ using namespace std;
 #include <gtest/gtest.h>
 
 #include "remove_nth_from_end.h"
-#include "util.h"
+#include "../util/util.h"
 
 namespace {
   TEST(RemoveNthFromEndTest, Case1) {

@@ -4,7 +4,7 @@ using namespace std;
 
 #include <gtest/gtest.h>
 
-#include "../solutions/word_search.h"
+#include "word_search.h"
 
 namespace {
   TEST(WordSearchTest, Exist) {

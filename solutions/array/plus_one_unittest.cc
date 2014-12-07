@@ -3,7 +3,7 @@ using namespace std;
 
 #include <gtest/gtest.h>
 
-#include "../solutions/plus_one.h"
+#include "plus_one.h"
 
 namespace {
   TEST(PlusOneTest, Case1) {
