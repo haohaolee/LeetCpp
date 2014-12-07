@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\solutions\*.cc" />
-    <ClCompile Include="..\test\*.cc" />
-    <ClInclude Include="..\solutions\*.h" />
+    <ClCompile Include="..\solutions\**\*.cc" />
+    <ClCompile Include="..\solutions\**\*.h" />
+    <ClCompile Include="..\test\**\*.cc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitignore" />
