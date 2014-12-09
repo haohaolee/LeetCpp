@@ -8,7 +8,7 @@
 #include <cstdlib>
 #include <string>
 #include <utility>
-
+#include <vector>
 
 // Definition for singly-linked list.
 struct ListNode {
@@ -43,5 +43,9 @@ TreeNode* build_tree(const std::string& tree_data);
 
 // String operations.
 std::string trim(std::string& data, const std::string& pattern);
+//
+//// Vector operations.
+//bool operator==(const std::vector<std::vector<int>>& left,
+//                const std::vector<std::vector<int>>& right);
 
 #endif  // LEETCPP_SOLUTIONS_UTIL_H_

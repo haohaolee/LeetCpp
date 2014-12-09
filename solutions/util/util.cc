@@ -179,3 +179,32 @@ string trim(string& data, const string& pattern) {
 
   return data.substr(start_pos, end_pos - start_pos + 1);
 }
+
+//bool operator==(const std::vector<std::vector<int>>& left,
+//                const std::vector<std::vector<int>>& right) {
+//  size_t left_matrix_size = left.size();
+//  size_t right_matrix_size = right.size();
+//
+//  if (left_matrix_size != right_matrix_size)
+//    return false;
+//
+//  bool ret = true;
+//  for (size_t i = 0; i < left_matrix_size && ret; ++i) {
+//    size_t left_vector_size = left[i].size();
+//    size_t right_vector_size = right[i].size();
+//
+//    if (left_vector_size != right_vector_size) {
+//      ret = false;
+//      break;
+//    }
+//
+//    for (size_t j = 0; j < left_vector_size; ++j) {
+//      if (left[i][j] != right[i][j]) {
+//        ret = false;
+//        break;
+//      }
+//    }
+//  }
+//
+//  return ret;
+//}
