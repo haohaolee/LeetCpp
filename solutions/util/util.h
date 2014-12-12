@@ -20,6 +20,15 @@ void destroy_linked_list(ListNode* head);
 std::string output_linked_list(ListNode* head);
 ListNode* build_linked_list(const std::string& list_data);
 
+
+// Definition for singly-linked list with a random pointer.
+struct RandomListNode {
+  int label;
+  RandomListNode *next, *random;
+  RandomListNode(int x) : label(x), next(NULL), random(NULL) {}
+};
+
+
 // Definition for binary tree.
 struct TreeNode {
   int val;

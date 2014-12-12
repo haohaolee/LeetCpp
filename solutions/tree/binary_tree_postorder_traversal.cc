@@ -14,13 +14,13 @@ BinaryTreePostorderTraversal::postorderTraversalRecursive(TreeNode *root) {
     return traversal_history;
 
   // Traversal the left sub-tree.
-  vector<int> left_traversal_history = postorderTraversalRecursive(root->left);
+  auto left_traversal_history = postorderTraversalRecursive(root->left);
   traversal_history.insert(traversal_history.end(),
                            left_traversal_history.begin(),
                            left_traversal_history.end());
 
   // Traversal the left sub-tree.
-  vector<int> right_traversal_history = postorderTraversalRecursive(root->right);
+  auto right_traversal_history = postorderTraversalRecursive(root->right);
   traversal_history.insert(traversal_history.end(),
                            right_traversal_history.begin(),
                            right_traversal_history.end());
