@@ -38,26 +38,19 @@ BinaryTreePreorderTraversal::preorderTraversalIterative(TreeNode* root) {
   if (root == NULL)
     return traversal_history;
 
-  TreeNode *root_node = root;
+  TreeNode *root_node = NULL;
   stack<TreeNode*> candidate_list;
+  candidate_list.push(root);
 
-  do {
-    // If current sub-tree is empty, then popup LCA node, visit it, and update
-    // next sub-tree to its right sub-tree.
-    if (root_node == NULL) {
-      root_node = candidate_list.top();
-      candidate_list.pop();
-      traversal_history.push_back(root_node->val);
-      root_node = root_node->right;
-    }
-
-    // If current sub-tree is not empty, then push the root node, update next
-    // sub-tree to its left sub-tree.
-    if (root_node) {
-      candidate_list.push(root_node);
-      root_node = root_node->left;
-    }
-  } while (!candidate_list.empty());
+  while (!candidate_list.empty()) {
+    root_node = candidate_list.top();
+    candidate_list.pop();
+    traversal_history.push_back(root_node->val);
+    if (root_node->right)
+      candidate_list.push(root_node->right);
+    if (root_node->left)
+      candidate_list.push(root_node->left);
+  }
 
   return traversal_history;
 }
