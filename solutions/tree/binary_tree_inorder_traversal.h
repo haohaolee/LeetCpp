@@ -13,7 +13,8 @@
 
 class BinaryTreeInorderTraversal {
 public:
-  std::vector<int> inorderTraversal(TreeNode *root);
+  std::vector<int> inorderTraversalRecursive(TreeNode *root);
+  std::vector<int> inorderTraversalIterative(TreeNode *root);
 };
 
 #endif  // LEETCPP_SOLUTIONS_BINARY_TREE_INORDER_TRAVERSAL_H_
