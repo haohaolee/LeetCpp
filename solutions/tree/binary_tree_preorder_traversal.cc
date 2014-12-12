@@ -3,27 +3,27 @@
 #include <vector>
 using namespace std;
 
-#include "binary_tree_inorder_traversal.h"
+#include "binary_tree_preorder_traversal.h"
 #include "../util/util.h"
 
 vector<int>
-BinaryTreeInorderTraversal::inorderTraversalRecursive(TreeNode *root) {
+BinaryTreePreorderTraversal::preorderTraversalRecursive(TreeNode *root) {
   vector<int> traversal_history;
 
   if (root == NULL)
     return traversal_history;
 
-  // Traverse the left sub-tree.
-  vector<int> left_traversal_history = inorderTraversalRecursive(root->left);
+  // Visit root node.
+  traversal_history.push_back(root->val);
+
+  // Traversal the left sub-tree.
+  vector<int> left_traversal_history = preorderTraversalRecursive(root->left);
   traversal_history.insert(traversal_history.end(),
                            left_traversal_history.begin(),
                            left_traversal_history.end());
 
-  // Visit the root node.
-  traversal_history.push_back(root->val);
-
-  // Traverse the right sub-tree.
-  vector<int> right_traversal_history = inorderTraversalRecursive(root->right);
+  // Traversal the left sub-tree.
+  vector<int> right_traversal_history = preorderTraversalRecursive(root->right);
   traversal_history.insert(traversal_history.end(),
                            right_traversal_history.begin(),
                            right_traversal_history.end());
@@ -32,7 +32,7 @@ BinaryTreeInorderTraversal::inorderTraversalRecursive(TreeNode *root) {
 }
 
 vector<int>
-BinaryTreeInorderTraversal::inorderTraversalIterative(TreeNode* root) {
+BinaryTreePreorderTraversal::preorderTraversalIterative(TreeNode* root) {
   vector<int> traversal_history;
 
   if (root == NULL)
