@@ -8,6 +8,6 @@ using namespace std;
 
 namespace {
   TEST(CopyListwithRandomPointerTest, Case1) {
-    //CopyListwithRandomPointer solution;
+    CopyListwithRandomPointer solution;
   };
 }
