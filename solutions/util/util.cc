@@ -129,10 +129,10 @@ TreeNode* build_tree(const std::string& tree_data) {
   string token = "";
 
   // Queue used to store the candidate nodes to do per-level traversal.
-  queue<CandidateTreeNodeType> candidate_nodes;
+  queue<TreeNodeInfo> candidate_nodes;
 
   // Enqueue the root node.
-  candidate_nodes.push(CandidateTreeNodeType(NULL, TreeNodeType::Root));
+  candidate_nodes.push(TreeNodeInfo(NULL, TreeNodeType::Root));
 
   // Build the tree per-level.
   while (!candidate_nodes.empty() && getline(stream, token, ',')) {
@@ -161,8 +161,8 @@ TreeNode* build_tree(const std::string& tree_data) {
         break;
     };
 
-    candidate_nodes.push(CandidateTreeNodeType(node, TreeNodeType::LeftChild));
-    candidate_nodes.push(CandidateTreeNodeType(node, TreeNodeType::RightChild));
+    candidate_nodes.push(TreeNodeInfo(node, TreeNodeType::LeftChild));
+    candidate_nodes.push(TreeNodeInfo(node, TreeNodeType::RightChild));
   }
 
   return root;

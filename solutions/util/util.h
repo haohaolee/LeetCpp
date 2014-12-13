@@ -43,7 +43,7 @@ typedef enum TreeNodeType_ {
   RightChild
 } TreeNodeType;
 
-typedef std::pair<TreeNode*, TreeNodeType> CandidateTreeNodeType;
+typedef std::pair<TreeNode*, TreeNodeType> TreeNodeInfo;
 
 // Tree operations.
 void destroy_tree(TreeNode* root);

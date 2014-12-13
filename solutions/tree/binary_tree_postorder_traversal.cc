@@ -1,5 +1,7 @@
 #include <cstdlib>
 #include <stack>
+#include <unordered_set>
+#include <utility>
 #include <vector>
 using namespace std;
 
@@ -38,18 +40,35 @@ BinaryTreePostorderTraversal::postorderTraversalIterative(TreeNode* root) {
   if (root == NULL)
     return traversal_history;
 
-  TreeNode *root_node = NULL;
+  TreeNode* node;
   stack<TreeNode*> candidate_list;
+  unordered_set<TreeNode*> pushed_list;
   candidate_list.push(root);
+  pushed_list.insert(root);
 
   while (!candidate_list.empty()) {
-    root_node = candidate_list.top();
-    candidate_list.pop();
-    traversal_history.push_back(root_node->val);
-    if (root_node->right)
-      candidate_list.push(root_node->right);
-    if (root_node->left)
-      candidate_list.push(root_node->left);
+    // Read current node on top of stack.
+    node = candidate_list.top();
+
+    // Push the root node of right sub-tree if it's never touched.
+    if (node->right && pushed_list.find(node->right) == pushed_list.end()) {
+      candidate_list.push(node->right);
+      pushed_list.insert(node->right);
+    }
+
+    // Push the root node of left sub-tree if it's never touched.
+    if (node->left && pushed_list.find(node->left) == pushed_list.end()) {
+      candidate_list.push(node->left);
+      pushed_list.insert(node->left);
+    }
+
+    // Visit current node if it has no children to be pushed:
+    // 1. It has no children.
+    // 2. Its children are all visited.
+    if (node == candidate_list.top()) {
+      traversal_history.push_back(node->val);
+      candidate_list.pop();
+    }
   }
 
   return traversal_history;
