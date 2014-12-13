@@ -12,20 +12,34 @@ bool ValidateBinarySearchTree::isValidBST(TreeNode* root) {
   bool valid_left_sub_tree = isValidBST(root->left);
   bool valid_right_sub_tree = isValidBST(root->right);
 
-  return (valid_left_sub_tree &&
-          valid_right_sub_tree &&
-          findMaxElem(root->left) < root->val &&
-          root->val < findMaxElem(root->right));
+  if (!valid_left_sub_tree || !valid_right_sub_tree)
+    return false;
+
+  if (root->left && findMaxElem(root->left) >= root->val)
+    return false;
+
+  if (root->right && findMinElem(root->right) <= root->val)
+    return false;
+
+  return true;
 }
 
 int ValidateBinarySearchTree::findMaxElem(TreeNode* root) {
   if (root == NULL) {
-    return INT_MIN;
+    throw "Root node should not be NULL!";
   }
 
-  int max_value = root->val;
-  if (root->right)
-    max_value = findMaxElem(root->right);
+  int max_value = (root->right) ? findMaxElem(root->right) : root->val;
 
   return max_value;
+}
+
+int ValidateBinarySearchTree::findMinElem(TreeNode* root) {
+  if (root == NULL) {
+    throw "Root node should not be NULL!";
+  }
+
+  int min_value = (root->left) ? findMinElem(root->left) : root->val;
+
+  return min_value;
 }

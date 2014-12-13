@@ -14,6 +14,7 @@ public:
   bool isValidBST(TreeNode *root);
 private:
   int findMaxElem(TreeNode *root);
+  int findMinElem(TreeNode *root);
 };
 
 #endif  // LEETCPP_SOLUTIONS_VALIDATE_BINARY_SEARCH_TREE_H_
