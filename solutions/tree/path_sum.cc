@@ -9,7 +9,6 @@ bool PathSum::hasPathSum(TreeNode* root, int sum) {
     return false;
   }
 
-
   if (hasPathSum(root->left, sum - root->val))
     return true;
 
