@@ -9,5 +9,13 @@ using namespace std;
 namespace {
   TEST(CopyListwithRandomPointerTest, Case1) {
     CopyListwithRandomPointer solution;
+
+    EXPECT_EQ(NULL, solution.copyRandomList(NULL));
+  };
+
+  TEST(CopyListwithRandomPointerTest, Case2) {
+    CopyListwithRandomPointer solution;
+
+    EXPECT_EQ(NULL, solution.copyRandomList(NULL));
   };
 }
