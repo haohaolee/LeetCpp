@@ -8,27 +8,27 @@ using namespace std;
 
 namespace {
   TEST(SumRoottoLeafNumbersTest, Case1) {
-    //SumRoottoLeafNumbers solution;
-    //TreeNode* root = NULL;
+    SumRoottoLeafNumbers solution;
+    TreeNode* root = NULL;
 
-    //// Empty tree.
-    //EXPECT_TRUE(solution.isValidBST(NULL));
-    //root = build_tree("#");
-    //EXPECT_TRUE(solution.isValidBST(root));
-    //destroy_tree(root);
+    // Empty tree.
+    EXPECT_EQ(0, solution.sumNumbers(NULL));
+    root = build_tree("#");
+    EXPECT_EQ(0, solution.sumNumbers(root));
+    destroy_tree(root);
 
-    //// Single root node tree.
-    //root = build_tree("1");
-    //EXPECT_TRUE(solution.isValidBST(root));
-    //destroy_tree(root);
+    // Single root node tree.
+    root = build_tree("1");
+    EXPECT_EQ(1, solution.sumNumbers(root));
+    destroy_tree(root);
   };
 
   TEST(SumRoottoLeafNumbersTest, Case2) {
-    //SumRoottoLeafNumbers solution;
-    //TreeNode* root = NULL;
+    SumRoottoLeafNumbers solution;
+    TreeNode* root = NULL;
 
-    //root = build_tree("1,2,2,3,#,#,3,4,#,#,4");
-    //EXPECT_FALSE(solution.isValidBST(root));
-    //destroy_tree(root);
+    root = build_tree("1,2,2,3,#,#,3,4,#,#,4");
+    EXPECT_EQ(2468, solution.sumNumbers(root));
+    destroy_tree(root);
   };
 }
