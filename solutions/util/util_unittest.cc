@@ -26,4 +26,23 @@ namespace {
     EXPECT_EQ(tree_data, output);
     destroy_tree(root);
   };
+
+  TEST(UtilTest, Case3) {
+      string linked_list_data = "1,3,2,6,5,8";
+      ListNode* root = build_linked_list(linked_list_data);
+
+      string output = output_linked_list(root);
+      EXPECT_EQ(linked_list_data, output);
+	  destroy_linked_list(root);
+  };
+
+  TEST(UtilTest, Case4) {
+      string data = "[{1,2},{3,4},{}]";
+      std::vector<ListNode*> vec = build_linked_list_of_vector(data);
+
+      string output = output_linked_list_of_vector(vec);
+      EXPECT_EQ(data, output);
+	  destroy_linked_list_of_vector(vec);
+  };
 }
+

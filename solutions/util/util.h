@@ -51,10 +51,15 @@ std::string output_tree(TreeNode* root);
 TreeNode* build_tree(const std::string& tree_data);
 
 // String operations.
-std::string trim(std::string& data, const std::string& pattern);
+std::string trim(const std::string& data, const std::string& pattern);
 //
 //// Vector operations.
 //bool operator==(const std::vector<std::vector<int>>& left,
 //                const std::vector<std::vector<int>>& right);
+
+
+std::vector<ListNode *> build_linked_list_of_vector(std::string const& data);
+void destroy_linked_list_of_vector(std::vector<ListNode*> const& lists);
+std::string output_linked_list_of_vector(std::vector<ListNode*> const& lists);
 
 #endif  // LEETCPP_SOLUTIONS_UTIL_H_

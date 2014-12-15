@@ -40,7 +40,6 @@ ListNode* build_linked_list(const string& list_data) {
   // Use stream to split string with delimiter = ",".
   istringstream stream(list_data);
   string token = "";
-  char delimiter = ',';
 
   // Build the linked list.
   while (getline(stream, token, ',')) {
@@ -168,7 +167,7 @@ TreeNode* build_tree(const std::string& tree_data) {
   return root;
 }
 
-string trim(string& data, const string& pattern) {
+string trim(const string& data, const string& pattern) {
   // [start_pos, end_pos]
   string trimed = "";
   string::size_type start_pos = data.find_first_not_of(pattern);
@@ -208,3 +207,53 @@ string trim(string& data, const string& pattern) {
 //
 //  return ret;
 //}
+//
+
+vector<ListNode *> build_linked_list_of_vector(string const& data) {
+	vector<ListNode*> lists;
+	string::size_type start = 0, end = 0;
+	while (true) {
+		start = data.find_first_of('{', start);
+		if (start == string::npos)
+			break;
+
+		end = data.find_first_of('}', start + 1);
+		if (end == string::npos)
+			throw std::runtime_error("no matching }");
+		auto node = build_linked_list(data.substr(start + 1, end - start - 1));
+		lists.push_back(node);
+		start = end + 1;
+	}
+
+	return lists;
+}
+
+void destroy_linked_list_of_vector(vector<ListNode *> const &lists) {
+    for (auto l : lists)
+    {
+        destroy_linked_list(l);
+    }
+}
+
+string output_linked_list_of_vector(vector<ListNode*> const& lists) {
+    ostringstream ss;
+    ss << '[';
+
+    if (!lists.empty()) {
+        auto it = begin(lists);
+        auto const last = end(lists) - 1;
+        while (it != last) {
+            ss << '{' << output_linked_list(*it) << "},";
+			++it;
+        }
+
+        ss << '{' << output_linked_list(*last) << '}';
+    }
+
+    ss << ']';
+
+    return ss.str();
+}
+
+
+
